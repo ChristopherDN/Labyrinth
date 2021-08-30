@@ -1,15 +1,13 @@
-import java.util.Scanner;
-
 public class Controller {
 
   UI ui = new UI();
-
+  Labyrinth labyrinth = new Labyrinth();
   public void mainMenu() {
-    ui.displayGreen("Welcome to this labyrint game!\nYou need to find your way out of this labyrint " +
+    ui.displayGreen("Welcome to this labyrinth game!\nYou need to find your way out of this labyrinth " +
         "by choosing your direction.");
     boolean keepRunning = true;
     do {
-      ui.displayGreen("Choose your direction:\nN = North\nW = West\nS = South\nE = east\nPress Q for quit\n\n" +
+      ui.displayBlue("Choose your direction:\nN = North ↑\nW = West ←\nS = South ↓\nE = East →\nPress Q for quit\n\n" +
           "Please choose: ");
       String choose = ui.getString();
 
@@ -27,10 +25,10 @@ public class Controller {
           east();
           break;
         case "Q":
-          System.out.println("You chosse to quit.. Goodbye!!");
+          ui.errorRed("You chose to quit.. Goodbye!!");
           System.exit(2);
         default:
-          System.out.println("Please maake a valid choose!! Try again!");
+          ui.errorRed("Please maake a valid choice!! Try again!");
       }
     } while (keepRunning == true);
   }
@@ -53,4 +51,10 @@ public void east(){
 
 
     }
+    public void newGame(){
+      ui.errorRed("Enter you hero name for the quest ahead: ");
+      Player player = new Player(ui.getString());
+      labyrinth.createLabyrinth(player);
+    }
+
     }
