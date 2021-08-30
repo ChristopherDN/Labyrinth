@@ -1,42 +1,48 @@
+import java.util.Scanner;
+
 public class Controller {
 
-  public void mainMenu() {
-    Menu menu = new Menu();
+  public static void main(String[] args) {
 
-    int choice;
-    boolean keepRunning;
-
+    System.out.println("Welcome to this labyrint game!\nYou need to find your way out of this labyrint " +
+            "by choosing your direction.");
+    boolean keepRunning = true;
     do {
-      keepRunning = true;
-      menu.showMainMenu(ui);
-      choice = ui.getScanInt();
-      switch (choice) {
-        case 1 ->;
-        case 2 ->;
-        case 3 -> ;
-        case 4 -> ;
-        case 5 -> ;
-        case 6 -> ;
-        case 9 -> {
-          ui.displayGreen("If in doubt, swim it out.....");
-          try {
-            Thread.sleep(2500);
-          } catch (Exception e) {
-          }
-          ui.displayGreen("The wetter the better....");
-          try {
-            Thread.sleep(2500);
-          } catch (Exception e) {
-          }
-          ui.errorRed("Water you sinking aboat");
-          try {
-            Thread.sleep(1000);
-          } catch (Exception e) {
-          }
-          ui.displayGreen("We do it dirty in the deep end !!! :D");
-          keepRunning = false;
+
+       {
+
+        System.out.println("Choose your direction:\nN = North\nW = West\nS = South\nE = east\nPress Q for quit\n\n" +
+                "Please choose: ");
+
+        Scanner sc = new Scanner(System.in);
+
+        String choose = sc.nextLine();
+
+        switch (choose) {
+          case "N":
+            System.out.println("You choose N");
+            break;
+          case "W":
+            System.out.println("You choose W");
+            break;
+          case "S":
+            System.out.println("You choose S");
+            break;
+          case "E":
+            System.out.println("You choose E");
+            break;
+          case "Q":
+            System.out.println("You chosse to quit.. Goodbye!!");
+            System.exit(2);
+          default:
+            System.out.println("Please maake a valid choose!! Try again!");
+
+
         }
       }
-    } while (keepRunning);
-  }
+
+    } while (keepRunning == true);
+
+      }
+
 }
