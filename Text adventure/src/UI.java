@@ -38,6 +38,7 @@ public class UI {
     }
 
     public String getString() { String anwser = scanner.nextLine();return anwser; }
+    public char getChar() { char c = scanner.next(".").charAt(0);return c; }
 
     public int getScanInt(String errorMessage) {
         while (!scanner.hasNextInt()) {
