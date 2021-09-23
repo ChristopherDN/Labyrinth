@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class UI {
@@ -38,6 +39,11 @@ public class UI {
     }
 
     public String getString() { String anwser = scanner.nextLine();return anwser; }
+
+    public char getChar() {
+        char c = scanner.next(".").toUpperCase().charAt(0);
+        return c;
+    }
 
     public int getScanInt(String errorMessage) {
         while (!scanner.hasNextInt()) {
