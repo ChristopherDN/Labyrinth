@@ -11,7 +11,6 @@ public class Labyrinth {
     }
 
     public void greatHall(UI ui) {
-        test
         ui.displayGreen("You have entered the first room: The Great Hall, find your way out!");
     }
 
