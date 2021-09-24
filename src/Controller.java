@@ -12,7 +12,7 @@ public class Controller {
       ui.displayBlue("Choose your direction:\nN = North ↑\nW = West ←\nS = South ↓\nE = East →\nPress Q for quit\n\n" +
           "Please choose: ");
         // String choose = ui.getString();
-        char choice = ui.getChar() ;
+        char choice = ui.getChar();
       switch (choice) {
         case 'N':
             superMethod(choice);
